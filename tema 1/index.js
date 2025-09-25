@@ -25,8 +25,11 @@ button.addEventListener("click", function () {
 })
 
 // EJERCICIO 4
-document.getElementById("imagenes").addEventListener("change", function() {
-    document.getElementById("vista").src = this.value;
+let images = document.getElementById("imagenes")
+
+images.addEventListener("change", function() {
+    let image = document.getElementById("vista")
+    image.src = images.value
 });
 
 // EJERCICIO 5
