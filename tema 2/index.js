@@ -31,7 +31,7 @@ if ((Number(number1)) || Number(number1)) {
 }
 
 // ejercicio 6
-number1 = prompt("escribe algo o pon un numero")
+numbe1 = prompt("escribe algo o pon un numero")
 checkNumber(number1)
 number2 = prompt("escribe algo o pon un numero")
 checkNumber(number2)
