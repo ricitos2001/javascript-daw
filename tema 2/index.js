@@ -90,33 +90,30 @@ if ((Number(number1)) && (Number(number2))) {
 }
 
 // ejercicio 9
-function esBisiesto(anio) {
-    return (anio % 4 === 0 && anio % 100 !== 0) || (anio % 400 === 0);
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
-
-let anio = parseInt(prompt("Introduce un año (yyyy):"), 10);
-let mes = parseInt(prompt("Introduce un mes (1-12):"), 10);
-let dia = parseInt(prompt("Introduce un día:"), 10);
-
-let diasMes;
-switch(mes) {
+let year = parseInt(prompt("Introduce un año (yyyy):"), 10);
+let month = parseInt(prompt("Introduce un mes (1-12):"), 10);
+let day = parseInt(prompt("Introduce un día:"), 10);
+let daysMonth;
+switch(month) {
     case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-        diasMes = 31;
+        daysMonth = 31;
         break;
     case 4: case 6: case 9: case 11:
-        diasMes = 30;
+        daysMonth = 30;
         break;
     case 2:
-        diasMes = esBisiesto(anio) ? 29 : 28;
+        daysMonth = isLeapYear(year) ? 29 : 28;
         break;
     default:
-        diasMes = -1;
+        daysMonth = -1;
 }
-
-if (anio > 0 && mes >= 1 && mes <= 12 && dia >= 1 && dia <= diasMes) {
-    let dd = String(dia).padStart(2, "0");
-    let mm = String(mes).padStart(2, "0");
-    alert(`La fecha válida es: ${dd}/${mm}/${anio}`);
+if (year > 0 && month >= 1 && month <= 12 && day >= 1 && day <= daysMonth) {
+    let dd = String(day).padStart(2, "0");
+    let mm = String(month).padStart(2, "0");
+    alert(`La fecha válida es: ${dd}/${mm}/${year}`);
 } else {
     alert("La fecha introducida NO es válida.");
 }
